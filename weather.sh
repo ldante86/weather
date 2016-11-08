@@ -38,7 +38,7 @@ HELP="\
 	-h	show this help and exit
 
   A location can be a zip code or a name.
-  If is name is multiple words, link them with
+  If the name is multiple words, link them with
   underscores.
 "
 
