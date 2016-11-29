@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$1" ]; then
+	declare -u metar="$1"
+	curl -s http://tgftp.nws.noaa.gov/weather/current/${metar}.html | \
+	grep -A 5 Temperature | grep "F ([0-9]" | awk -F ">" '{print $3}' | sed 's/(.*//' | sed 's/^ *//'
+else
+	echo "usage: ${0##*/} METAR-STATION"
+	exit 1
+fi
